@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/primary</item>-->
+        <!--<item name="colorPrimaryDark">@color/primary_dark</item>-->
+        <!--<item name="colorAccent">@color/accent</item>-->
+        <!--<item name="android:textColorPrimary">@color/primary_text</item>-->
+        <!--<item name="android:textColorSecondary">@color/secondary_text</item>-->
+        <!--<item name="android:alertDialogTheme">@style/AppCompatAlertDialogStyle</item>-->
+    <!--</style>-->
+
+    <style name="mboni_api_mboni_code_edittext">
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColorHint">@color/mboni_api_mboni_code</item>
+        <item name="android:textColor">@color/mboni_api_mboni_code</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <!-- Used for the buttons -->
+        <!--<item name="colorAccent">@color/accent</item>-->
+        <item name="colorAccent">#202020</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <!-- Used for the background -->
+        <!--<item name="android:background">#4CAF50</item>-->
+        <!--Positive button-->
+        <item name="buttonBarPositiveButtonStyle">@style/DestructiveButton</item>
+    </style>
+
+
+    <style name="DestructiveButton" parent="android:Widget.DeviceDefault.Button.Borderless">
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="MBoniAPI_AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!--<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
+
+</resources>

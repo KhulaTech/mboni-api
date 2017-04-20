@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="mboni_api_activity_horizontal_margin">16dp</dimen>
+    <dimen name="mboni_api_activity_vertical_margin">16dp</dimen>
+
+    <dimen name="mboni_api_static_map_image_view_height">100dp</dimen>
+    <dimen name="mboni_api_static_map_image_view_width">500dp</dimen>
+    <dimen name="mboni_api_location_imgs_height">150dp</dimen>
+
+    <dimen name="mboni_api_app_bar_height">230dp</dimen>
+    <!--<dimen name="text_margin">16dp</dimen>-->
+    <dimen name="mboni_api_code_unique_container_height">70dp</dimen>
+    <dimen name="mboni_api_audio_player_container_height">70dp</dimen>
+
+    <dimen name="mboni_api_player_control_height">50dp</dimen>
+    <dimen name="mboni_api_player_control_width">50dp</dimen>
+    <dimen name="mboni_api_podslider_height">30dp</dimen>
+</resources>
