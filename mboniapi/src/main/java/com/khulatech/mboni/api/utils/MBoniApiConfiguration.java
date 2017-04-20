@@ -2,6 +2,7 @@ package com.khulatech.mboni.api.utils;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Class permettant de configurer l'activity {@link com.khulatech.mboni.api.ui.MBoniAPIActivity}
@@ -11,11 +12,15 @@ import android.os.Parcelable;
  */
 
 public class MBoniApiConfiguration implements Parcelable {
-    private final String enterCodeExplanationText;
-    private final String toDisplayCode;
+    private String enterCodeExplanationText;
+    private String toDisplayCode;
     private final String apiKey;
 
-    public MBoniApiConfiguration(String enterCodeExplanationText, String toDisplayCode, String apiKey) {
+    public MBoniApiConfiguration(@NonNull String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+    public MBoniApiConfiguration(String enterCodeExplanationText, String toDisplayCode,@NonNull String apiKey) {
         this.enterCodeExplanationText = enterCodeExplanationText;
         this.toDisplayCode = toDisplayCode;
         this.apiKey = apiKey;
@@ -32,6 +37,17 @@ public class MBoniApiConfiguration implements Parcelable {
     public String getApiKey() {
         return apiKey;
     }
+
+    public MBoniApiConfiguration setEnterCodeExplanationText(String enterCodeExplanationText) {
+        this.enterCodeExplanationText = enterCodeExplanationText;
+        return this;
+    }
+
+    public MBoniApiConfiguration setToDisplayCode(String toDisplayCode) {
+        this.toDisplayCode = toDisplayCode;
+        return this;
+    }
+
 
     @Override
     public int describeContents() {

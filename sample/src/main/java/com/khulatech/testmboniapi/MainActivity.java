@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void getLocation(View view) {
         // lance l'actictivity MBoniAPI
         Intent intent = new Intent(this, MBoniAPIActivity.class);
-        MBoniApiConfiguration configuration = new MBoniApiConfiguration("Hello", "HELLOK", "myapikey");
+        MBoniApiConfiguration configuration = new MBoniApiConfiguration("Veuillez saisir le code MBoni de votre lieu de livraison", "HELLOK", "YOUR_API_KEY");
         intent.putExtra(MBoniAPIActivity.EXTRA_CONFIG, configuration);
         startActivityForResult(intent, APP_REQUEST_CODE);
     }

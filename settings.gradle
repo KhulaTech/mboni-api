@@ -1,1 +1,1 @@
-include ':app', ':mboniapi'
+include ':sample', ':mboniapi'
