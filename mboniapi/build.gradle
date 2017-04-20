@@ -1,0 +1,136 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3"
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        vectorDrawables.useSupportLibrary = true
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:design:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:cardview-v7:25.2.0'
+    // imageloader
+    compile 'com.facebook.fresco:fresco:1.1.0'
+    // network
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //view injection
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    // imageViewer
+//    compile 'com.github.stfalcon:frescoimageviewer:0.4.1'
+    compile ('com.github.stfalcon:frescoimageviewer:0.4.1'){
+        transitive=true
+    }
+    // slideshow
+    compile ('com.flyco.banner:FlycoBanner_Lib:2.0.2@aar'){
+        transitive=true
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def bintrayUser = properties.getProperty('bintrayUser')
+def bintrayApiKey = properties.getProperty('bintrayApiKey')
+
+
+bintray {
+//    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+//    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    user = bintrayUser
+    key = bintrayApiKey
+    publications = ['Publication']
+    pkg {
+        repo = 'mboni'
+        name = 'api'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://joanef2@gitlab.com/joanef2/MBoniAPI.git'
+        labels = ['khulatech', 'mboni', 'api', 'android', 'location', 'places']
+        version {
+            name = '2-Final'
+            vcsTag = '1.0.1'
+//            desc = 'Gradle Bintray Plugin 1.0 final'
+        }
+    }
+}
+
+publishing {
+    publications {
+        Publication(MavenPublication) {
+            groupId 'com.khulatech.mboni'
+            artifactId 'api'
+            version '1.0.0'
+        }
+    }
+}
+
+
+//bintray {
+////    publications = ['MyPublication']
+//
+//    publish = true //[Default: false] Whether version should be auto published after an upload
+//    override = true //[Default: false] Whether to override version artifacts already published
+//    //Package configuration. The plugin will use the repo and name properties to check if the package already exists. In that case, there's no need to configure the other package properties (like userOrg, desc, etc).
+//    pkg {
+//        repo = 'mboni'
+//        name = 'api'
+////        userOrg = 'myorg' //An optional organization name when the repo belongs to one of the user's orgs
+//        desc = 'Api MBoni permettant d\'afficher les informations d\'un code MBoni ou de permettre aux utilisateurs de saisir un code MBoni'
+//        websiteUrl = 'http://mboni.net'
+////        issueTrackerUrl = 'https://github.com/bintray/gradle-bintray-plugin/issues'
+//        vcsUrl = 'https://joanef2@gitlab.com/joanef2/MBoniAPI.git'
+//        licenses = ['Apache-2.0']
+//        labels = ['khulatech', 'mboni', 'api', 'android', 'location', 'places']
+//        publicDownloadNumbers = true
+////        attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
+//
+//        //Optional version descriptor
+//        version {
+//            name = '1-Final' //Bintray logical version name
+//            vcsTag = '1.0.0'
+//            released  = new Date()
+////          desc = //Optional - Version-specific description'
+////          released  = //Optional - Date of the version release. 2 possible values: date in the format of 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ' OR a java.util.Date instance
+////          attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin'] //Optional version-level attributes
+//        }
+//    }
+//}

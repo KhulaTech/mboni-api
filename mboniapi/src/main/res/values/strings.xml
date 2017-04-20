@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">MBoni</string>
+    <string name="app_name_condensed">MBoni</string>
+
+    <string name="mboni_api_code_select_app_link">https://sfpt5.app.goo.gl/YM0b</string>
+
+
+    <string name="mboniapi_enter_code_explanation_text">Veuillez saisir un code MBoni:</string>
+    <string name="mboni_api_code_unique_empty">- - - - - -</string>
+    <string name="mboni_api_continue">Continuer</string>
+    <string name="mboni_api_enter_valide_code_to_process">Veuillez entrer un code MBoni valide pour continuer</string>
+    <string name="mboni_api_code_not_founded">Code Mboni non valide</string>
+    <string name="mboni_api_erreur_serveur">Erreur. Veuillez vérifier votre connexion internet et réessayer</string>
+    <string name="mboni_api_reassayer">Réessayer</string>
+    <string name="mboni_api_cancel">Annuler</string>
+    <string name="mboni_api_voir_plus">Voire plus</string>
+
+    <string name="mboni_api_photo_devanture">Photo devanture</string>
+    <string name="mboni_api_photo_secondaire">Autre photo</string>
+    <string name="mboni_api_no_audio_to_download">Fichier audio non disponible</string>
+    <string name="mboni_api_audio_download_failed">Echec lors du téléchargement de l\'audio</string>
+    <string name="mboni_api_la_localisation">L\'emplacement</string>
+    <string name="mboni_api_choose">Continuer avec ce code</string>
+    <string name="mboni_api_whats_is_mboni">C\'est quoi MBoni?</string>
+    <string name="mboni_api_ok_compris">OK Compris</string>
+    <string name="mboni_api_whats_is_mboni_explanation">MBoni est l\'applciation d\'adressage</string>
+
+    <string name="mboni_api_permission">Permission</string>
+    <string name="mboni_api_permission_write_external_dir_explanation">Pour télécharger et lire l\'audio, nous avons besoin de l\'accès à l\'espace de stockage du téléphone</string>
+    <string name="mboni_api_ou">Ou</string>
+    <string name="mboni_api_choose_code_from_mboni_app"><u>Créer/choisir un code depuis l\'application MBoni</u></string>
+
+
+</resources>

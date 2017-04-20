@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragments.LocationDetailFragment">
+
+    <com.khulatech.mboni.api.utils.SimpleImageBanner
+        android:id="@+id/sib_the_most_comlex_usage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bb_barColor="#88000000"
+        app:bb_barPaddingBottom="5dp"
+        app:bb_barPaddingLeft="10dp"
+        app:bb_barPaddingRight="10dp"
+        app:bb_barPaddingTop="5dp"
+        app:bb_delay="2"
+        app:bb_indicatorGravity="RIGHT"
+        app:bb_isAutoScrollEnable="true"
+        app:bb_isBarShowWhenLast="true"
+        app:bb_isIndicatorShow="true"
+        app:bb_isLoopEnable="true"
+        app:bb_isTitleShow="true"
+        app:bb_period="10"
+        app:bb_scale="0.5625"
+        app:bb_textColor="#ffffff"
+        app:bb_textSize="13.5sp"
+        app:bb_indicatorCornerRadius="3dp"
+        app:bb_indicatorGap="8dp"
+        app:bb_indicatorHeight="6dp"
+        app:bb_indicatorSelectColor="#ffffff"
+        app:bb_indicatorStyle="CORNER_RECTANGLE"
+        app:bb_indicatorUnselectColor="#88ffffff"
+        app:bb_indicatorWidth="6dp"/>
+
+    <ScrollView
+        android:layout_below="@id/sib_the_most_comlex_usage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <!--Code Unique-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mboni_api_code_unique_container_height"
+                android:id="@+id/codeUniqueCardV" >
+                    <TextView
+                        android:id="@+id/code_unique_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/mboni_api_code_unique_empty"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:textAllCaps="true"
+                        android:ellipsize="end"
+                        android:textColor="@color/primary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp" />
+            </android.support.v7.widget.CardView>
+
+            <!-- Quartier Ville Pays Text-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mboni_api_activity_vertical_margin"
+                android:id="@+id/geoCodeCardV">
+                <TextView
+                    android:id="@+id/geo_code_textView"
+                    android:padding="@dimen/mboni_api_activity_horizontal_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    />
+            </android.support.v7.widget.CardView>
+
+            <!--Audio player-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mboni_api_audio_player_container_height"
+                android:id="@+id/audioCardV"
+                android:layout_marginTop="@dimen/mboni_api_activity_vertical_margin"
+                android:layout_marginBottom="@dimen/mboni_api_activity_vertical_margin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/player_control_imageView"
+                        android:visibility="invisible"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/aar_ic_play"
+                        android:tint="@color/accent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"/>
+
+                    <ProgressBar
+                        android:visibility="invisible"
+                        android:id="@+id/player_audio_download_progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:indeterminate="true"/>
+
+                    <ImageView
+                        android:id="@+id/download_imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_file_download_black_24dp"
+                        android:tint="@color/accent" />
+
+                    <SeekBar
+                        android:id="@+id/player_seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/player_control_imageView"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginBottom="8dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/audio_time_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:00"
+                        android:ems="10"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignLeft="@+id/player_seekBar"
+                        android:layout_below="@+id/player_seekBar"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:layout_marginLeft="8dp"
+                         />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--Static Map Image-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/mboni_api_activity_vertical_margin"
+                android:id="@+id/staticImgVCardV">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/staticImgV"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/mboni_api_static_map_image_view_height"
+                        android:scaleType="centerCrop"/>
+                    <ImageView
+                        android:id="@+id/enlargeStaticImg_imgview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_fullscreen_24dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingRight="@dimen/mboni_api_activity_vertical_margin"
+                        android:paddingBottom="@dimen/mboni_api_activity_vertical_margin"
+                        />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--Description Text-->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptionCardV">
+                <TextView
+                    android:id="@+id/description_textView"
+                    android:padding="@dimen/mboni_api_activity_horizontal_margin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    />
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/comfirm_code_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/mboni_api_activity_vertical_margin"
+        android:textAllCaps="false"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:text="@string/mboni_api_choose"/>
+
+
+</RelativeLayout>
